@@ -1,0 +1,35 @@
+<button *ngIf="isValidDevice" class="list-button" no-lines>
+  <div class="item-title" (click)="goDeviceDetailPage()">
+    <ion-grid class="toggle-grid">
+      <ion-row align-items-center class="device-block">
+        <ion-col col-4 class="none-padding">
+          <img class="thumb-image" jy-lazy-load [source]="deviceCore.thumbnail?.uri"
+            placeholder="assets/img/model_image_thumbnail.png">
+        </ion-col>
+        <ion-col col-5 class="none-padding">
+          <ion-row align-items-center>
+            <h1 class="device-name">{{ deviceCore.deviceName }}</h1>
+          </ion-row>
+          <ion-row align-items-center class="component">
+            <div class="primary-items" *ngFor="let m of deviceCore.primaryControllers; let i = index;">
+              <ui-component (exoChange)="deviceCore.send($event)" [(ngModel)]="deviceCore.status"
+                [disabled]="!deviceCore.isAvailable" [model]="m" color="primary" *ngIf="i != 0"></ui-component>
+            </div>
+          </ion-row>
+        </ion-col>
+        <ion-col col-3 class="none-padding">
+          <div class="primary-items">
+            <ui-component (exoChange)="deviceCore.send($event)" [(ngModel)]="deviceCore.status"
+              [disabled]="!deviceCore.isAvailable" [model]="deviceCore.primaryControllers[0]" color="primary">
+            </ui-component>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center class="edit-block">
+        <ion-col col-12 class="none-padding">
+          <h1 class="device-edit">編輯</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</button>

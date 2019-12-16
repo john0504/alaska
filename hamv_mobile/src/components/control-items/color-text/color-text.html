@@ -1,0 +1,15 @@
+<div class="main-block">
+  <span class="title-text">{{ title | translate }}</span>
+  <div class="value-block" [ngClass]="{'text-disabled': disabled}">
+      <span class="circle_in_color" [ngClass]="{
+        'circle_in_purple': state.currentValueItem?.value >= options?.purple,
+        'circle_in_red': state.currentValueItem?.value >= options?.red, 
+        'circle_in_orange': state.currentValueItem?.value >= options?.orange, 
+        'circle_in_yellow': state.currentValueItem?.value >= options?.yellow, 
+        'circle_in_green': state.currentValueItem?.value >= options?.green
+      }">
+        {{ (state?.currentValueItem?.text | translate) | replace: state.currentValueItem?.value }}
+      </span>
+    <ion-icon [name]="state.currentValueItem?.icon"></ion-icon>
+  </div>
+</div>

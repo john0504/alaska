@@ -1,0 +1,176 @@
+---
+familyName: CLEN-8-1
+familyMembers:
+- CLEN-8-1.*
+images:
+  thumbnail:
+    uri: "assets/img/clean.png"
+  banner:
+    uri: "assets/img/clean_b.png"
+controlLayout:
+  primary:
+  - POWER
+  - H01R
+  secondary:
+  - H51
+  - H00
+  - H08
+  - H01
+  - H03
+  - H05
+chartLayout:
+  main:
+  - H51L
+scheduleLayout:
+  primary:
+  - H01
+deviceId: 8
+components:
+  POWER:
+    type: toggle
+    title: ''
+    models:
+    - key: H00
+      values:
+      - value: 0
+        text: ''
+      - value: 1
+        text: ''
+  H00:
+    type: toggle
+    title: 電源開關
+    models:
+    - key: H00
+      values:
+      - value: 0
+        text: 關閉
+      - value: 1
+        text: 開啟
+  H01R:
+    type: title-text
+    title: '風速:'
+    models:
+    - key: H01
+      values:
+      - value: 0
+        text: 智能
+      - value: 1
+        text: 睡眠
+      - value: 2
+        text: 微速
+      - value: 3
+        text: 弱速
+      - value: 4
+        text: 中速
+      - value: 5
+        text: 強速
+  H01:
+    type: button-group
+    title: 運轉模式
+    models:
+    - key: H01
+      values:
+      - value: 0
+        text: 智能
+      - value: 1
+        text: 睡眠
+      - value: 2
+        text: 靜音
+      - value: 3
+        text: 中速
+      - value: 4
+        text: 強速
+      - value: 5
+        text: 急速
+      disable:
+      - conditions:
+        - key: H00
+          op: eq
+          target: 0
+  H03:
+    type: button-group-with-toggle
+    title: 定時關機
+    models:
+    - key: H03
+      values:
+      - value: 1
+        text: '1'
+      - value: 2
+        text: '2'
+      - value: 3
+        text: '3'
+      - value: 4
+        text: '4'
+      - value: 5
+        text: '5'
+      - value: 6
+        text: '6'
+      - value: 7
+        text: '7'
+      - value: 8
+        text: '8'
+    - key: H03
+      values:
+      - value: 0
+        text: ''
+      - value: "*"
+        text: ''
+      default: 1
+      disable:
+      - conditions:
+        - key: H00
+          op: eq
+          target: 0
+  H05:
+    type: text-toggle
+    title: 清洗濾網復歸
+    models:
+    - key: H05
+      values:
+      - value: 0
+        text: '使用達3000小時「清洗濾網復歸」會自動亮起，提醒您需清洗或更換濾網。清潔完成後可以操作機體或app來關閉指示燈，設備將重新計時。'
+      - value: 1
+        text: '使用達3000小時「清洗濾網復歸」會自動亮起，提醒您需清洗或更換濾網。清潔完成後可以操作機體或app來關閉指示燈，設備將重新計時。'
+      disable:
+      - conditions:
+        - key: H00
+          op: eq
+          target: 0
+      - conditions:
+        - key: H05
+          op: eq
+          target: 0
+  H08:
+    type: toggle
+    title: 兒童安全鎖
+    models:
+    - key: H08
+      values:
+      - value: 0
+        text: 關閉
+      - value: 1
+        text: 開啟
+  H51:
+    type: color-text
+    title: AQI
+    models:
+    - key: H51
+      values:
+        func: aqi
+      options:
+        green: 0
+        yellow: 36
+        orange: 54
+        red: 71
+        purple: 151
+chartComponents:
+  H51L:
+    type: line-chart
+    title: AQI
+    models:
+    - key: H51
+      values:
+        min: 0
+        max: 750
+        step: 1
+        func: aqi

@@ -1,0 +1,22 @@
+<ion-grid class="toggle-grid">
+  <ion-row align-items-center>
+    <ion-col col-6 class="none-padding" *ngIf="title != ''">
+      <span class="toggle-title">{{ title | translate }}</span>
+    </ion-col>
+    <ion-col col-6 class="toggle-items none-padding" *ngIf="title != ''">
+      <ion-toggle class="big-toggle" [color]="color" [disabled]="disabled || state.disableState"
+        [(ngModel)]="state.currentState" (ngModelChange)="goChange()"></ion-toggle>
+    </ion-col>
+    <ion-col class="toggle-items none-padding" *ngIf="title == ''">
+      <ion-toggle class="big-toggle" [color]="color" [disabled]="disabled || state.disableState"
+        [(ngModel)]="state.currentState" (ngModelChange)="goChange()"></ion-toggle>
+    </ion-col>
+  </ion-row>
+  <ion-row align-items-center>
+    <div class="toggle-status">
+      <span
+        class="item-text">{{ (state?.currentValueItem?.text | translate) | replace: state.currentValueItem?.value }}</span>
+      <ion-icon [name]="state.currentValueItem?.icon"></ion-icon>
+    </div>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,11 @@
+<ion-content>
+  <div ion-text align="center" class="gdpr-title">{{ 'GDPR_ALERT.TITLE' | translate: { appName: appName, oauthName: oauthName } }}</div>
+  <div class="divider"></div>
+  <div ion-text align="center" class="gdpr-message">{{ 'GDPR_ALERT.MESSAGE' | translate }}</div>
+  <terms-of-service margin-top></terms-of-service>
+  <div class="divider"></div>
+  <button class="full-button" (click)="gdprConsent(true)"><span>{{ 'GDPR_ALERT.CONTINUE' | translate }}</span></button>
+  <div class="divider"></div>
+  <button class="cancel-button" (click)="gdprConsent(false)"><span>{{ 'GDPR_ALERT.CANCEL' | translate }}</span></button>
+  <extra-page-space></extra-page-space>
+</ion-content>

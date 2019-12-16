@@ -1,0 +1,55 @@
+<ion-content *ngIf="!isUserLoggedIn()">
+  <div class="container">
+    <div class="main">
+      <div class="header-image">
+        <img [src]="themeService.logoUrl">
+        <h1 color="primary">{{ 'SIGNUP.CREATE_MY_ACCOUNT' | translate }}</h1>
+      </div>
+      <ion-list>
+        <button class="full-button" (click)="goSignup()" ><span>{{ 'APP_START.SIGN_UP_WITH_EMAIL' | translate }}</span></button>
+        <div class="divider">
+        </div>
+        <button class="full-button" color="fbBlue" fb-login><span>{{ 'APP_START.SIGN_UP_WITH_FB' | translate }}</span></button>
+      </ion-list>
+    </div>
+    <p align="center"><a tappable ion-text (click)="goLogin()" color="white" margin-vertical>{{ 'APP_START.SIGN_IN_C' | translate }}</a></p>
+  </div>
+</ion-content>
+<ion-content *ngIf="isUserLoggedIn()">
+  <div class="container">
+    <form #loginForm="ngForm" novalidate class="main" (ngSubmit)="onLogin(loginForm)">
+      <div class="header-image-1">
+        <img [src]="themeService.logoUrl">
+      </div>
+      <ion-list>
+        <div class="header-t">
+          <h1 color="white">{{ 'APP_START.SIGN_IN' | translate }}</h1>
+        </div>
+        <div class="divider">
+        </div>
+        <ion-item color="transparent">
+          <ion-icon name="person" item-left></ion-icon>
+          <h2>{{ login.username }}</h2>
+        </ion-item>
+        <ion-item class="input-with-eye-toggle" color="transparent">
+          <ion-label floating color="darkGrey">{{ 'APP_START.PASSWORD' | translate }}</ion-label>
+          <ion-input [(ngModel)]="login.password" name="password" [type]="inputType" #password="ngModel" [pattern]="pwV" minlength="8"
+            maxlength="20" required myTabIndex="2" clearOnEdit="false">
+          </ion-input>
+          <button (click)="onShowHidePassword()" ion-button icon-only clear item-right type="button">
+            <ion-icon [name]="iconName" color="dark"></ion-icon>
+          </button>
+        </ion-item>
+        <div class="divider">
+        </div>
+        <button class="login-button" [disabled]="!loginForm.valid" type="submit" margin-vertical><span>{{ 'APP_START.LOG_IN' | translate }}</span></button>
+      </ion-list>
+    </form>
+    <div>
+      <p align="center"><a ion-text (click)="goForgotPassword()" color="bluish" margin-vertical>{{ 'APP_START.FORGOT_PWD' | translate }}</a></p>
+    </div>
+    <div>
+      <button class="full-button" (click)="doLogout()"><span>{{ 'APP_START.LOG_OUT' | translate }}</span></button>
+    </div>
+  </div>
+</ion-content>

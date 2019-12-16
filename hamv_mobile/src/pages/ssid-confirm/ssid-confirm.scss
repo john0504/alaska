@@ -1,0 +1,46 @@
+page-ssid-confirm {
+  .toolbar-title {
+    text-align: center;
+  }
+  .container {
+    border-radius: 5px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    background: map-get($colors, lightGrey);
+    .main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-content: stretch;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 12px;
+      h1 {
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+    }
+    .bottom-button {
+      border: 1.4px rgba(0, 122, 250, 1.0) solid;
+      border-radius: 10px;
+      margin: -5% 5% 5% 5%;
+      width: 90%;
+      height: 60px;
+      background-color: rgba(0, 122, 250, 1.0);
+      span {
+        font-weight: 560;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 1.0);
+      }    
+    }
+  }
+  .item-md,
+  .item-ios {
+    padding-left: 0;
+  }
+  ion-content {
+    background-image: none;
+  }
+}

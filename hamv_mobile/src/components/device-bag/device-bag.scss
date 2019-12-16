@@ -1,0 +1,29 @@
+device-bag {
+  width: 100%;
+  .device-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0.8rem;
+    background-color: white;
+    .device-title {
+      flex: 1 0 0;
+      margin-right: 8px;
+      .device-title-text {
+        font-size: 1.7rem;
+        margin: 8px 8px 8px 16px;
+        word-break: break-word;
+        font-weight: 600;
+      }
+    }
+    ion-icon.device-action {
+      flex: 0 0 auto;
+      height: 2rem;
+      font-size: 2.5rem;
+      text-align: right;
+      padding-right: 0.7rem;
+      padding-left: 0.7rem;
+      color: rgb(150, 150, 150);
+    }
+  }
+}

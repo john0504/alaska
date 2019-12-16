@@ -1,0 +1,24 @@
+<ion-header no-border>
+  <ion-toolbar color="transparent">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="closePage()" color="white">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>   
+    <ion-title>{{ 'PREDEVICE_CREATE.ADD_DEVICE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container">    
+    <div margin-bottom class="kanban-side step" (click)="onBle()">
+      <img class="wifi-pic" src="assets/img/ble-fan.png">         
+    </div>
+    <div margin-bottom class="kanban-side step" (click)="onBle()">
+      <img class="wifi-pic" src="assets/img/ble-clean.png">         
+    </div>
+    <div margin-bottom class="kanban-side step" (click)="onNext()">
+      <img class="wifi-pic" src="assets/img/wifi-clean.png">         
+    </div>
+  </div>
+  <extra-page-space></extra-page-space>
+</ion-content>

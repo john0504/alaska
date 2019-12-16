@@ -1,0 +1,99 @@
+range-with-toggle {
+  $font-bold: 500;
+  $font-title: 1.7rem;
+  .basic-text {
+    font-size: $font-title;
+    font-weight: $font-bold;
+    margin-right: 8px;
+  }
+
+  .text-disabled {
+    color: color($colors, grey);
+  }
+
+  .main-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    .title-text {
+      font-size: $font-title;
+      font-weight: $font-bold;
+    }
+    .toggle-block {
+      @extend .main-block;
+      justify-content: flex-end;
+
+      ion-toggle {
+        padding-left: 8px;
+      }
+
+      .toggle-status {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .item-text {
+          font-size: 1.7rem;
+          font-weight: $font-bold;
+          margin-right: 8px;
+        }
+
+        ion-icon {
+          font-size: 2.2rem;
+        }
+      }
+      .big-toggle {
+        padding: 12px 1px;
+  
+        button {
+          padding: 0 6px;
+        }
+  
+        &.toggle-md {
+          height: 21px;
+          top: 4.5px;
+          width: 46px;
+  
+          .toggle-inner {
+            height: 30px;
+            top: -5.5px;
+            width: 30px;
+          }
+        }
+  
+        &.toggle-ios {
+          padding: 6px 1px;
+          .toggle-icon {
+            top: 2px;
+            bottom: 2px;
+          }
+        }
+      }
+    }
+  }
+  .sub-block {
+    .range-status {
+      .range-tick {
+        display: none;
+      }
+      .range-bar {
+        border-radius: 4px;
+      }
+      .range-knob {
+        outline: none;
+      }
+    }
+    .value-block {
+      @extend .main-block;
+      justify-content: flex-end;
+      .item-text {
+        @extend .basic-text;
+      }
+      ion-icon {
+        font-size: $font-title + 0.5rem;
+      }
+    }
+  }
+}

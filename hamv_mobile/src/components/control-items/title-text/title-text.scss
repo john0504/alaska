@@ -1,0 +1,34 @@
+title-text {
+  $font-bold: 550;
+  $font-title: 1.3rem;
+  color: rgb(150, 150, 150);
+
+  .basic-text {
+    font-size: $font-title + 0.4rem;
+    font-weight: $font-bold;
+    margin-right: 8px;
+  }
+
+  .main-block {
+    display: flex;
+
+    .title-text {
+      font-size: $font-title;
+      font-weight: $font-bold;
+    }
+
+    .value-block {
+      @extend .main-block;
+      justify-content: flex-end;
+
+      .item-text {        
+        font-size: $font-title;
+        font-weight: $font-bold;
+      }
+
+      ion-icon {
+        font-size: $font-title + 0.9rem;
+      }
+    }
+  }
+}

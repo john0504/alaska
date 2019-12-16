@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="white">
+    <ion-title>{{ 'DEVICE_SETTINGS.SETTINGS' | translate }}</ion-title>
+    <ion-buttons right>
+      <div class="save-block" (click)="saveDevice()" *ngIf="canSaveDeviceName()">
+        <span>{{ 'DEVICE_SETTINGS.SAVE' | translate }}</span>
+      </div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <div class="space-small"></div>
+    <div class="control-item">
+      <span class="control-item-text">{{ 'DEVICE_SETTINGS.DEVICE_NAME' | translate }}</span>
+      <div class="value-block" [ngClass]="{'text-disabled': disabled}">
+        <ion-item class="item-block">
+          <ion-input [(ngModel)]="deviceName" type="text">
+          </ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <div class="space-big"></div>
+    <div *ngIf="isOwner" class="control-item">
+      <span class="control-item-text">{{ 'DEVICE_SETTINGS.MODEL' | translate }}</span>
+      <div class="value-block" [ngClass]="{'text-disabled': disabled}">
+        <span class="item-text">{{ deviceCore.model }}</span>
+      </div>
+    </div>
+    <div *ngIf="isOwner" class="control-item">
+      <span class="control-item-text">{{ 'DEVICE_SETTINGS.SERIAL' | translate }}</span>
+      <div class="value-block" [ngClass]="{'text-disabled': disabled}">
+        <span class="item-text">{{ deviceCore.macAddress }}</span>
+      </div>
+    </div>
+    <div *ngIf="isOwner" class="control-item">
+      <span class="control-item-text">{{ 'DEVICE_SETTINGS.SOFTWARE_VERSION' | translate }}</span>
+      <div class="value-block" [ngClass]="{'text-disabled': disabled}">
+        <span class="item-text">{{ deviceCore.firmwareVersion }}</span>
+      </div>
+    </div>
+    <div class="space-small"></div>
+    <p class="sub-title">更新與重置</p>
+    <div *ngIf="isOwner" class="control-item">
+      <span class="control-item-button-text" (click)="checkForUpdates()">
+        {{ deviceCore.isUpdating ? ('DEVICE_SETTINGS.UPDATING' | translate) : ('DEVICE_SETTINGS.CHECK_FOR_UPDATES' | translate) }}
+      </span>
+    </div>
+    <div *ngIf="isOwner" class="control-item">
+      <span class="control-item-deletebutton-text" (click)="deleteDeviceConfirm()">
+        {{ 'DEVICE_SETTINGS.DELETE_DEVICE' | translate }}
+      </span>
+    </div>
+  </div>
+  <extra-page-space></extra-page-space>
+</ion-content>

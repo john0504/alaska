@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="white">
+    <ion-title>{{ 'SCHEDULE_LIST.DEVICE_TITLE' | translate: { deviceName: deviceCore?.deviceName } }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addSchedule()" class="add-block">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="schedule-content">
+  <div class="empty" padding *ngIf="!scheduleList || scheduleList.length === 0; else listSchedule">
+    <ion-card>
+      <ion-card-content (click)="addSchedule()">
+        <div class="title">{{ 'SCHEDULE_LIST.CREATE_A_SCHEDULE' | translate }}</div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ng-template #listSchedule>
+    <br>
+    <div *ngFor="let scheduleItem of scheduleList; let i = index" class="schedule-block">
+      <ion-grid class="toggle-grid" (click)="scheduleSelected(i)">
+        <ion-row align-items-center class="device-block">
+          <ion-col col-4 class="none-padding">
+            <img class="thumb-image" [src]="deviceCore?.thumbnail?.uri"
+              placeholder="assets/img/model_image_thumbnail.png">
+          </ion-col>
+          <ion-col col-5 class="none-padding">
+            <ion-row align-items-center>
+              <div class="schedule-item-sub">
+                <ion-label class="schedule-item-text-block">
+                  <h1 class="schedule-item-title">
+                    {{ scheduleItem.core.name | uppercase }}
+                  </h1>
+                  <h2 class="schedule-item-time">
+                    {{ scheduleItem.core.start | remarkTime }}-{{ scheduleItem.core.end | remarkTime }}
+                  </h2>
+                  <h3 class="schedule-item-days">
+                    {{ (scheduleItem.core.schedule | scheduleRepeatTime) }}
+                  </h3>
+                </ion-label>
+              </div>
+            </ion-row>
+          </ion-col>
+          <ion-col col-3 class="toggle-items none-padding">
+            <ion-toggle color="primary" [(ngModel)]="scheduleItem.isActive"
+              (ngModelChange)="scheduleActive(scheduleItem, i)" class="big-toggle">
+            </ion-toggle>
+          </ion-col>
+        </ion-row>
+        <ion-row align-items-center class="edit-block">
+          <ion-col col-12 class="none-padding">
+            <h1 class="device-edit">編輯</h1>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ng-template>
+  <extra-page-space></extra-page-space>
+</ion-content>

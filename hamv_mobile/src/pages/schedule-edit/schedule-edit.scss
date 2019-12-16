@@ -1,0 +1,267 @@
+page-schedule-edit {
+  .toolbar-ios-white .toolbar-title-ios, 
+  .toolbar-ios-white .bar-button-clear-ios, 
+  .toolbar-ios-white .bar-button-default-ios {
+    margin-right: 0;
+  }
+  .toolbar-title {
+    text-align: center;
+    margin-right: 5%;
+  }
+  $background-transparent: transparent;
+  $box-shadow-none: none;
+  $font-bold: 700;
+  $font-bold-light: $font-bold - 200;
+  $font-title: 1.3rem;
+  $item-margin: 16px 0 0;
+  $text-left: left;
+  $text-right: right;
+  .footer-md::before,
+  .footer-ios::before {
+    background-image: none;
+  }
+  .item-ios p,
+  .item-md p {
+    color: initial;
+  }
+  ion-label h2 {
+    font-weight: bold !important;
+  }
+  ion-col.toggle-wrapper {
+    padding: 15px 0px 5px 5px;
+  }
+  .range-ios.range-has-pin {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+  .flex-basic {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .header-md {
+    &::after {
+      background: none;
+    }
+  }
+  .save-schedule {
+    &[disabled] {
+      background-color: $background-transparent;
+      color: color($colors, lightGrey);
+    }
+    font-size: 1.5rem;
+    font-weight: $font-bold;
+  }
+  .control-item-divider {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid color($colors, grey);
+  }
+  .schedule-content {
+    background-color: rgb(220, 220, 220);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .control-item {
+      background-color: color($colors, white);
+      padding-left: 15px;
+      padding-top: 10px;
+      padding-right: 15px;
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      border-bottom: 1px solid color($colors, grey);
+      ion-item {
+        min-height: 30px;
+        height: 30px;
+        .item-inner {
+          min-height: 30px;
+          border-bottom: 0;
+          input {
+            text-align: right;     
+          }               
+          ::-webkit-input-placeholder {
+            text-align: right;
+          }
+        }
+      }
+    }    
+    .repeat-time-toggle {
+      height: 4rem;
+      @extend .flex-basic;
+      justify-content: space-between;
+      .title-text {
+        font-size: 1.5rem;
+        font-weight: $font-bold-light;
+      }
+      .toggle-block {
+        @extend .flex-basic;
+        justify-content: flex-end;
+        .toggle-status {
+          font-size: 1.7rem;
+          font-weight: $font-bold;
+          margin: 0 8px;
+          text-align: $text-right;
+        }
+      }
+      .big-toggle {
+        padding: 12px 1px;
+  
+        button {
+          padding: 0 6px;
+        }
+  
+        &.toggle-md {
+          height: 21px;
+          top: 4.5px;
+          width: 46px;
+  
+          .toggle-inner {
+            height: 30px;
+            top: -5.5px;
+            width: 30px;
+          }
+        }
+  
+        &.toggle-ios {
+          padding: 6px 1px;
+          .toggle-icon {
+            top: 2px;
+            bottom: 2px;
+          }
+        }
+      }
+    }
+    .repeat-time-button {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 10px;
+      height: 4rem;
+    }    
+    .control-button {
+      background-color: $background-transparent;
+      color: color($colors, dark);
+      flex: 1 0 auto;
+      font-size: $font-title;
+      font-weight: $font-bold-light;
+      margin: 2px;
+      padding: 0 8px;
+      height: 37px;
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      &[disabled] {
+        border: none;
+        box-shadow: $box-shadow-none;
+        color: color($colors, grey);
+      }
+      &.control-item-active {
+        border-color: color($colors, primary);
+        border-style: solid;
+        border-width: 2px;
+        box-shadow: $box-shadow-none;
+        font-weight: $font-bold-light;
+        &[disabled] {
+          border-color: color($colors, grey);
+          color: color($colors, grey);
+        }
+      }
+    }
+    .control-item-text {
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+    .control-item-button-text {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color:rgb(255, 59, 48);
+    }
+    .value-block {
+      @extend .main-block;
+      justify-content: flex-end;
+      .item-text {
+        font-size: 1.7rem;
+        font-weight: 550;
+        color: rgb(150, 150, 150);
+      }
+      .item-block {
+        width: 200px;
+        &:first-child {
+          border-top: none;
+        }
+      }
+      ion-icon {
+        color: rgb(150, 150, 150);
+        font-size: 2.2rem;
+      }
+    }
+    .sub-title {
+      font-size: 1.3rem;
+      font-weight: 550;
+      color: rgb(150, 150, 150);
+      margin-left: 15px;
+    }
+    .delete-schedule {
+      padding: 10px;
+    }
+    .schedule-main-content {
+      align-content: stretch;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: flex-start;
+      padding: 15px;
+      background-color: color($colors, white);
+      border-bottom: 1px solid color($colors, grey);
+      ion-item {
+        background-color: $background-transparent;
+        padding: 0;
+        .text-input-wp {
+          border: solid 1px grey;
+          border-left: none;
+          border-right: none;
+          border-top: none;
+          padding: 0;
+        }
+      }
+      ion-label {
+        font-size: 12px;
+        font-weight: $font-bold;
+        color: #000000;
+        margin: 0 0 8px 0;
+      }
+      .item-block {
+        &:first-child {
+          border-top: none;
+        }
+      }
+      .schedule-time-set {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: $item-margin;
+        >button {
+          background-color: $background-transparent;
+          padding: 0;
+          text-align: $text-left;
+          width: 50%;
+        }
+        >button:nth-child(2) {
+          margin: 0 10px 0;
+        }
+      }
+      .settings-title {
+        margin: 8px 0 16px 0;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+page-bluetooth-list {
+  .toolbar-ios-white .toolbar-title-ios, 
+  .toolbar-ios-white .bar-button-clear-ios, 
+  .toolbar-ios-white .bar-button-default-ios {
+    margin-right: 0;
+  }
+  .toolbar-title {    
+    text-align: center;
+    margin-right: 15%;
+  }
+  .container {
+    background-color: rgb(220, 220, 220);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .control-item {
+      background-color: color($colors, white);
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      height: 4.4rem;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid color($colors, grey);
+      ion-icon {        
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: rgb(0, 122, 250);
+      }
+    }
+    .control-item-text {
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+    .continue-block { 
+      padding: 1.5rem;
+      position:absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      .bottom-button {
+        margin: 0;
+        border-radius: 0 0 5px 5px;
+        font-weight: 700;
+      }
+      .continue-button {
+        border: 1.4px rgba(0, 122, 250, 1.0) solid;
+        border-radius: 10px;
+        width: 100%;
+        height: 60px;
+        background-color: rgba(0, 122, 250, 1.0);
+        span {
+          font-weight: 560;
+          font-size: 16px;
+          color: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+}

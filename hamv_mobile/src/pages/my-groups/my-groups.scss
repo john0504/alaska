@@ -1,0 +1,100 @@
+page-my-groups {
+  background: rgb(230, 230, 230);
+  .toolbar-md-white .bar-button-clear-md, 
+  .toolbar-md-white .bar-button-default-md, 
+  .toolbar-md-white .bar-button-outline-md, 
+  .toolbar-md-white .toolbar-title-md {
+    margin-right: 5%;
+  }
+  .toolbar-title {
+    text-align: center;
+  }   
+  div.empty {
+    ion-card {
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
+      border-radius: 10px;
+      height: 17.1rem;
+      background-color: rgb(230, 230, 230);   
+      .popit-title {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        .popit-sub-title {
+          font-size: 1.8rem;
+          margin-left: 10px;
+        }
+        ion-card-title {
+          flex: 1 0 0;
+          word-break: break-word;
+          margin: 0;
+          font-size: 2.6rem;
+          font-weight: 600;
+        }   
+      }
+      ion-card-content {
+        background-color: rgb(230, 230, 230);      
+        .title {
+          text-align: center; 
+          width: 100%;
+          line-height: 15.1rem;
+          margin: auto;
+          font-size: 1.7rem;
+          font-weight: 600;
+          color: rgb(120, 120, 120);
+        } 
+      }
+    }
+  }
+  .ungroup-header {
+    padding: 12px 0;
+    background-color: rgb(220, 220, 220);
+    border-top: 1px solid color($colors, grey);
+    border-bottom: 1px solid color($colors, grey);
+    .ungroup-title {
+      text-align: left;
+      padding-top: 8px;
+      margin-left: 20px;
+      .ungroup-title-text {
+        margin: 8px;
+        font-size: 1.3rem;
+        font-weight: 550;
+        color: rgb(150, 150, 150);
+      }
+    }
+  }
+  .no-device-text {
+    text-align: center;
+  }
+  .dnd {
+    &::before {
+      content: attr(data-line);
+      color: color($colors, warmGrey);
+      text-align: center;
+      display: block;
+      padding: 20px 0;
+    }
+    &.has-child::before {
+      content: "";
+      padding: 0;
+    }
+    .device-action {
+      touch-action: none;
+    }
+  }
+  .finger-over {
+    background-color: color($colors, lightGrey);
+  }
+  .gu-transit {
+    .device-header {
+      background-color: color($colors, primary);
+    }
+  }
+  ion-content {
+    background-image: url('../assets/img/background3.jpg');
+  }
+  .has-group {
+    background-image: none;
+  }
+}

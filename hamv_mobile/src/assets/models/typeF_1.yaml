@@ -1,0 +1,180 @@
+---
+familyName: typeF-1
+familyMembers:
+- typeF-1.*
+images:
+  thumbnail:
+    uri: "assets/img/fan.png"
+  banner:
+    uri: "assets/img/fan_b.png"
+controlLayout:
+  primary:
+  - H00
+  - H02R
+  secondary:
+  - POWER
+  - H02
+  - H0C
+  - H0B
+  - H51
+scheduleLayout:
+  primary:
+  - H02
+deviceId: F
+components:
+  H00:
+    type: toggle
+    title: ''
+    models:
+    - key: H00
+      values:
+      - value: 0
+        text: ''
+      - value: 1
+        text: ''
+  H02R:
+    type: title-text
+    title: '風速:'
+    models:
+    - key: H01
+      values:
+      - value: 0
+        text: "1"
+      - value: 1
+        text: "2"
+      - value: 2
+        text: "3"
+      - value: 3
+        text: "4"
+      - value: 4
+        text: "5"
+      - value: 5
+        text: "6"
+      - value: 6
+        text: "7"
+      - value: 7
+        text: "A"
+  POWER:
+    type: toggle
+    title: 電源開關
+    models:
+    - key: H00
+      values:
+      - value: 0
+        text: ''
+      - value: 1
+        text: ''
+  H02:
+    type: button-group
+    title: 運轉風速
+    models:
+    - key: H02
+      values:
+      - value: 1
+        text: "1"
+      - value: 2
+        text: "2"
+      - value: 3
+        text: "3"
+      - value: 4
+        text: "4"
+      - value: 5
+        text: "5"
+      - value: 6
+        text: "6"
+      - value: 7
+        text: "7"
+      - value: 0
+        text: 'A'
+      disable:
+      - conditions:
+        - key: H00
+          op: eq
+          target: 0
+  H0C:
+    type: button-group-with-toggle
+    title: 定時關機
+    models:
+    - key: H0C
+      values:
+      - value: 60
+        text: "1"
+      - value: 120
+        text: "2"
+      - value: 180
+        text: "3"
+      - value: 240
+        text: "4"
+      - value: 300
+        text: "5"
+      - value: 360
+        text: "6"
+      - value: 420
+        text: "7"
+      - value: 480
+        text: "8"
+    - key: H0C
+      values:
+      - value: 0
+        text: ''
+      - value: "*"
+        text: ''
+      default: 60
+      disable:
+      - conditions:
+        - key: H00
+          op: eq
+          target: 0
+  H0B:
+    type: button-group-with-toggle
+    title: 預約開機
+    models:
+    - key: H0B
+      values:
+      - value: 60
+        text: "1"
+      - value: 120
+        text: "2"
+      - value: 180
+        text: "3"
+      - value: 240
+        text: "4"
+      - value: 300
+        text: "5"
+      - value: 360
+        text: "6"
+      - value: 420
+        text: "7"
+      - value: 480
+        text: "8"
+    - key: H0B
+      values:
+      - value: 0
+        text: ''
+      - value: "*"
+        text: ''
+      default: 60
+      disable:
+      - conditions:
+        - key: H00
+          op: eq
+          target: 1
+  H51:
+    type: text-toggle
+    title: 清洗濾網復歸
+    models:
+    - key: H51
+      values:
+      - value: 0
+        text: '使用達3000小時「清洗濾網復歸」會自動亮起，提醒您需清洗或更換濾網。清潔完成後可以操作機體或app來關閉指示燈，設備將重新計時。'
+      - value: 1
+        text: '使用達3000小時「清洗濾網復歸」會自動亮起，提醒您需清洗或更換濾網。清潔完成後可以操作機體或app來關閉指示燈，設備將重新計時。'
+      disable:
+      - conditions:
+        - key: H00
+          op: eq
+          target: 0
+      - conditions:
+        - key: H51
+          op: eq
+          target: 0

@@ -1,0 +1,33 @@
+page-pre-device-create {
+  .toolbar-ios-transparent .toolbar-title-ios, 
+  .toolbar-ios-transparent .bar-button-clear-ios, 
+  .toolbar-ios-transparent .bar-button-default-ios {
+    color: rgb(255, 255, 255);
+  }
+  .toolbar-md-transparent .bar-button-clear-md,
+  .toolbar-md-transparent .bar-button-default-md,
+  .toolbar-md-transparent .bar-button-outline-md,
+  .toolbar-md-transparent .toolbar-title-md {
+    color: rgb(255, 255, 255);
+    margin-right: 10%;
+  }
+  .toolbar-title {
+    text-align: center;
+  }
+  .container {
+    padding-top: 2.75rem;
+    min-height: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-content: stretch;
+    .kanban-side {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      margin-top: -1rem;
+    }
+  }
+  ion-content {
+    background-image: url('../assets/img/background2.jpg');
+  }
+}

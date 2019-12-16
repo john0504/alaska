@@ -1,0 +1,106 @@
+ // http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-navbar {
+  position: relative;
+  .center-logo {
+    height: 30%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 8px;
+  }
+}
+ion-menu {
+  ion-content {
+    background-image: none;
+  }
+  .content-md,
+  .content-ios {
+    background-color: rgb(220, 220, 220);
+  }
+  ion-footer {
+    .item-inner {
+      background-color: rgb(220, 220, 220);
+    }
+  }
+  .center-logo-ios {
+    height: 60%;
+    margin: auto 8px 2px;
+  }
+  .item-md,
+  .item-ios {
+    padding-left: 0;
+    margin-bottom: -10px;
+    &.menu-item-highlight {
+      background-color: color($colors, lightGrey);
+    }
+    .label label-ios {
+      line-height: 1.7rem;
+      margin: auto;
+    }
+    .icon-block {
+      height: 2.7rem;
+      max-width:  100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 10px;
+      margin: auto;
+    }
+    .title-block {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: rgb(0, 0, 0);
+      padding-left: 3rem;
+    }
+    .text-block {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: rgb(150, 150, 150);
+    }
+    .item-inner {
+      padding-left: 16px;
+    }
+    .control-item-divider {
+      margin-left: 3rem;
+      border-bottom: 1px solid color($colors, grey);
+    }
+  }
+}
+.action-sheet-group {
+  border-radius: 10px 10px 0 0;
+  .button-inner {
+    font-weight: 600;
+  }
+}
+.back-button {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.toolbar-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  align-items: center;
+}
+.toolbar-ios ion-title {
+  padding: 0;
+}
+.back-button-icon {
+  color: rgb(0, 122, 250);
+}
+.back-button-text {
+  color: rgb(0, 122, 250);
+}

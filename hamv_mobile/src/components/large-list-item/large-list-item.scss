@@ -1,0 +1,78 @@
+large-list-item {
+  display: block;
+  width: 100%;
+
+  .list-button {
+    height: 17.1rem;
+    align-items: stretch;
+    background-color: rgba(230, 230, 230, 0.85);  
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, .14);
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 8px;
+    width: 90%;
+
+    .item-title {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      h1 {
+        margin: 0
+      }
+
+      .thumb-image {
+        width: 65%;
+      }
+
+      .primary-items {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+  
+        ui-component {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .device-name {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-left: 8px;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: initial;
+    word-wrap: break-word;
+  }
+  .component {
+    margin-top: 6px;
+  }
+  .device-block {    
+    height: 12.7rem;
+  }
+  .edit-block {
+    height: 4.4rem;
+    border-top: 2px solid color($colors, grey);
+    margin-top: -0.3rem;
+    margin-left: -1.1rem;
+    margin-right: -0.9rem;
+    .device-edit {
+      color: color($colors, customBlue);
+      font-size: 1.7rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}

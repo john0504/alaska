@@ -1,0 +1,35 @@
+group-bag {
+  .group-header {
+    width: 100%;
+    height: 5.7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 0 25px;
+    background-color: rgb(220, 220, 220);
+    border-top: 1px solid rgb(220, 220, 220);
+    border-bottom: 1px solid rgb(220, 220, 220);
+    .group-title {
+      flex: 1 0 0;
+      text-align: left;
+      margin-right: 8px;
+      .group-title-text {
+        font-size: 1.3rem;
+        font-weight: 550;
+        color: rgb(150, 150, 150);
+      }
+    }
+    .group-action {
+      @extend .main-block;
+      justify-content: flex-end;
+      flex: 0 0 auto;
+      margin-right: 1.5rem;
+      padding: 0;
+      ion-icon {
+        color: rgb(150, 150, 150);
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

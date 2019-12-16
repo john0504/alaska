@@ -1,0 +1,40 @@
+empty-devices {
+  div.empty {
+    ion-card {
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
+      border-radius: 10px;
+      height: 17.1rem;
+      background-color: rgb(230, 230, 230);   
+      .popit-title {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        .popit-sub-title {
+          font-size: 1.8rem;
+          margin-left: 10px;
+        }
+        ion-card-title {
+          flex: 1 0 0;
+          word-break: break-word;
+          margin: 0;
+          font-size: 2.6rem;
+          font-weight: 600;
+        }   
+      }
+      ion-card-content {
+        background-color: rgb(230, 230, 230);      
+        .title {
+          text-align: center; 
+          width: 100%;
+          line-height: 15.1rem;
+          margin: auto;
+          font-size: 1.7rem;
+          font-weight: 600;
+          color: rgb(120, 120, 120);
+        } 
+      }
+    }
+  }
+}

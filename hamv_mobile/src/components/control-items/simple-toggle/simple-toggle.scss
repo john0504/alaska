@@ -1,0 +1,84 @@
+simple-toggle {
+  $background-transparent: transparent;
+  $font-bold: 500;
+  $padding-none: 0;
+  ion-row {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    ion-col {
+      margin-top: -10px;
+      margin-bottom: -10px;
+
+    }
+  }
+  .none-padding {
+    padding: $padding-none;
+  }
+
+  .text-disabled {
+    color: color($colors, grey);
+  }
+
+  .toggle-items {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .toggle-grid {
+    background-color: $background-transparent;
+    padding: $padding-none;
+    height: 2rem;
+    
+    .big-toggle {
+      padding: 12px 1px;
+
+      button {
+        padding: 0 6px;
+      }
+
+      &.toggle-md {
+        height: 21px;
+        top: 4.5px;
+        width: 46px;
+
+        .toggle-inner {
+          height: 30px;
+          top: -5.5px;
+          width: 30px;
+        }
+      }
+
+      &.toggle-ios {
+        padding: 6px 1px;
+        .toggle-icon {
+          top: 2px;
+          bottom: 2px;
+        }
+      }
+    }
+  }
+
+  .toggle-status {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .item-text {
+      font-size: 1.7rem;
+      font-weight: $font-bold;
+      margin-right: 8px;
+    }
+
+    ion-icon {
+      font-size: 2.2rem;
+    }
+  }
+
+  .toggle-title {
+    font-size: 1.7rem;
+    font-weight: $font-bold;
+  }
+}

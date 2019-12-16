@@ -1,0 +1,79 @@
+<ion-header no-border>
+  <ion-navbar color="white">
+    <ion-title>{{ 'SCHEDULE_EDIT.TITLE' | translate: { action: action } }}</ion-title>
+    <ion-buttons end>
+      <button (click)="save()" [disabled]="!scheduleCore.isValid" class="save-schedule" color="customBlue" icon-only
+        ion-button>
+        <span>{{ 'SCHEDULE_EDIT.SAVE' | translate }}</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="schedule-content">
+    <br>
+    <br>
+    <div class="control-item">
+      <span class="control-item-text">{{ 'SCHEDULE_EDIT.SCHEDULE_NAME' | translate }}</span>
+      <div class="value-block" [ngClass]="{'text-disabled': disabled}">
+        <ion-item class="item-block">
+          <ion-input [(ngModel)]="schedule.name" color="list-blue"
+            placeholder="{{ ('SCHEDULE_EDIT.MY_SCHEDULE') | translate }}" type="text" maxlength="40"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <div class="control-item" (click)="startDt.open()">
+      <span class="control-item-text">{{ 'SCHEDULE_EDIT.START_TIME' | translate }}</span>
+      <div class="value-block" [ngClass]="{'text-disabled': disabled}">
+        <span class="item-text">{{ (schedule.start | remarkTime) || '--:--' }}</span>
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </div>
+      <ion-datetime #startdt [(ngModel)]="schedule.start" cancelText="{{ 'SCHEDULE_EDIT.CANCEL' | translate }}"
+        doneText="{{ 'SCHEDULE_EDIT.DONE' | translate }}" pickerFormat="h:mm A" displayFormat="H:mm" hidden>
+      </ion-datetime>
+    </div>
+    <div class="control-item" (click)="endDt.open()">
+      <span class="control-item-text">{{ 'SCHEDULE_EDIT.END_TIME' | translate }}</span>
+      <div class="value-block" [ngClass]="{'text-disabled': disabled}">
+        <span class="item-text">{{ (schedule.end | remarkTime) || '--:--' }}</span>
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </div>
+      <ion-datetime #enddt [(ngModel)]="schedule.end" cancelText="{{ 'SCHEDULE_EDIT.CANCEL' | translate }}"
+        doneText="{{ 'SCHEDULE_EDIT.DONE' | translate }}" pickerFormat="h:mm A" displayFormat="H:mm" hidden>
+      </ion-datetime>
+    </div>
+    <br>
+    <p class="sub-title">{{ 'SCHEDULE_EDIT.TIME' | translate }}</p>
+    <div class="control-item repeat-time-button" *ngIf="!isOneShot">
+      <button [ngClass]="{'control-item-active': schedule.days.indexOf(button.value) !== -1 }"
+        [ngStyle]="{ 'min-width': '38px', 'max-width': '38px' }" (click)="scheduleCore.toggleScheduleDay(button.value)"
+        *ngFor="let button of buttons" class="control-button" clear ion-button round>
+        {{ button.text | translate }}
+      </button>
+    </div>
+    <div class="control-item repeat-time-toggle">
+      <span class="title-text">{{ 'SCHEDULE_EDIT.REPEAT' | translate }}</span>
+      <div class="toggle-block">
+        <ion-toggle class="big-toggle" color="primary" [(ngModel)]="!isOneShot" (ngModelChange)="setRepeatData()">
+        </ion-toggle>
+      </div>
+    </div>
+    <br>
+    <p class="sub-title">{{ 'SCHEDULE_EDIT.SETTINGS' | translate }}</p>
+    <div class="schedule-main-content">
+      <div *ngFor="let m of deviceCore.actions; let i = index;">
+        <ui-component color="primary" *ngIf="isVisable(m)" [(ngModel)]="schedule.esh" [model]="m"
+          (exoChange)="setCommand($event)"></ui-component>
+        <div *ngIf="i < deviceCore.actions.length - 1 && isVisable(m)" class="control-item-divider"></div>
+      </div>
+    </div>
+    <br>
+    <div class="control-item" *ngIf="!isCreationMode()">
+      <span class="control-item-button-text" (click)="deleteScheduleConfirm()">
+        {{ 'SCHEDULE_EDIT.DELETE_SCHEDULE' | translate }}
+      </span>
+    </div>
+    <br>
+  </div>
+  <extra-page-space></extra-page-space>
+</ion-content>

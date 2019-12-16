@@ -1,0 +1,76 @@
+page-login {
+  .header-image {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 10rem;
+    }
+  }
+  .header-t {
+    height: 38.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin: 0px;
+      font-weight: 500;
+      color: rgb(255, 255, 255);
+    }
+  }
+  .divider {
+    height: 20px;
+  }
+  .item-md,
+  .item-ios {
+    padding-left: 0;
+  }
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 30px 15px;
+    ion-list {
+      flex-grow: 1;
+    }
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin: 0px;
+      font-weight: 500;
+      color: rgb(255, 255, 255);
+    }
+    p, p a {
+      margin-top: -10px;
+      font-size: 1.3rem;
+      color: rgb(255, 141, 0);
+    }
+    ion-label {
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin-top: 0;
+      margin-left: 0.5rem;
+      margin-bottom: -2%;
+    }
+    ion-input {
+      color: rgba(255, 255, 255, 1.0);
+    }
+  }
+  .login-button {  
+    border: 1.4px rgba(0, 122, 250, 1.0) solid;
+    border-radius: 10px;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 122, 250, 1.0);
+    span{
+      font-weight: 560;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 1.0);
+    }
+  }
+}

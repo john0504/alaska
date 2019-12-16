@@ -1,0 +1,48 @@
+page-settings {
+  .toolbar-md-white .bar-button-clear-md, 
+  .toolbar-md-white .bar-button-default-md, 
+  .toolbar-md-white .bar-button-outline-md, 
+  .toolbar-md-white .toolbar-title-md {
+    margin-right: 15%;
+  }
+  .toolbar-title {
+    text-align: center;
+  }
+  .page-spaces {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(220, 220, 220);
+  }
+
+  .section-text {
+    font-size: 1.3rem;
+    font-weight: 500;
+    width: 100%;
+    color: rgb(120, 120, 120);
+
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+
+  .text-icon {
+    font-size: 1.8rem;
+    right: 15px;
+    position: relative;
+  }
+  .logout-button {  
+    border: 1.4px rgba(0, 122, 250, 1.0) solid;
+    border-radius: 10px;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 122, 250, 1.0);
+    span{
+      font-weight: 560;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 1.0);
+    }
+  }
+}

@@ -1,0 +1,91 @@
+page-device-settings {  
+  .toolbar-ios-white .toolbar-title-ios, 
+  .toolbar-ios-white .bar-button-clear-ios, 
+  .toolbar-ios-white .bar-button-default-ios {
+    margin-right: 0;
+  }
+  .toolbar-title {
+    text-align: center;
+    margin-right: 15%;
+  }
+  .item-md,
+  .item-ios {
+    padding-left: 0;
+  }
+  .save-block {
+    color: rgb(0, 122, 250);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .container {
+    background-color: rgb(220, 220, 220);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .control-item {
+      background-color: color($colors, white);
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      height: 4.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      border-bottom: 1px solid color($colors, grey);
+      ion-item {
+        min-height: 30px;
+        height: 30px;
+        .item-inner {
+          min-height: 30px;
+          border-bottom: 0;
+          input {
+            text-align: right;     
+          }               
+          ::-webkit-input-placeholder {
+            text-align: right;
+          }
+        }
+      }
+    }
+    .control-item-text {
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+    .control-item-button-text {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color:rgb(0, 122, 250);
+    }
+    .control-item-deletebutton-text {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color:rgb(255, 59, 48);
+    }
+    .value-block {
+      @extend .main-block;
+      justify-content: flex-end;
+
+      .item-text {
+        font-size: 1.7rem;
+        font-weight: 550;
+        color: rgb(150, 150, 150);
+      }
+      .item-block {
+        width: 200px;
+        &:first-child {
+          border-top: none;
+        }
+      }
+    }
+    .sub-title {
+      font-size: 1.3rem;
+      font-weight: 550;
+      color: rgb(150, 150, 150);
+      margin-left: 15px;
+    }
+  }
+  ion-content {
+    background: rgb(220, 220, 220);
+  }
+}

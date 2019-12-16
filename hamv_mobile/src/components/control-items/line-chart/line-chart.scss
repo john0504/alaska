@@ -1,0 +1,71 @@
+line-chart {
+  height: 100%;
+  .control-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 4px 0;
+  }
+  .control-area2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4px 0;
+    background-color: color($colors, imageGary);
+  }
+  echarts-core [echarts] {
+    height: 350px;
+  }
+  .range-text {
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  .range-button {
+    height: 4rem;
+    border-radius: 2rem;
+    background-color: color($colors, transparent);
+    color: color($colors, darkGrey);
+    span {      
+      font-size: 2rem;
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+    &[disabled] {
+      background-color: color($colors, transparent);
+      border: none;
+      box-shadow: none;
+      opacity: 1;
+      color: color($colors, grey);
+    }
+  }
+  .filter-button {
+    background-color: color($colors, transparent);
+    border: 1px solid color($colors, transparent);
+    color: color($colors, grey);
+    flex: 1 0 auto;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 8px;
+    span {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    &[disabled] {
+      border: none;
+      box-shadow: none;
+      color: color($colors, grey);
+      opacity: 1;
+    }
+    &.filter-button-active {
+      box-shadow: none;
+      font-weight: 700;
+      color: color($colors, dark);
+    }
+  }
+}
