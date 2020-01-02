@@ -29,18 +29,13 @@ simple-toggle {
   .toggle-grid {
     background-color: $background-transparent;
     padding: $padding-none;
-    height: 2rem;
+    height: 2.4rem;
     
     .big-toggle {
-      padding: 12px 1px;
-
-      button {
-        padding: 0 6px;
-      }
-
+      padding: 12px 1px 12px;
       &.toggle-md {
         height: 21px;
-        top: 4.5px;
+        top: 2.5px;
         width: 46px;
 
         .toggle-inner {
@@ -53,7 +48,7 @@ simple-toggle {
       &.toggle-ios {
         padding: 6px 1px;
         .toggle-icon {
-          top: 2px;
+          top: 1px;
           bottom: 2px;
         }
       }

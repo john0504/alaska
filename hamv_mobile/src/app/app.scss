@@ -37,7 +37,7 @@ ion-menu {
     }
   }
   .center-logo-ios {
-    height: 60%;
+    height: 40%;
     margin: auto 8px 2px;
   }
   .item-md,
@@ -103,4 +103,8 @@ ion-menu {
 }
 .back-button-text {
   color: rgb(0, 122, 250);
+}
+
+.scroll-content {
+  overflow-y: auto; /* https://forum.ionicframework.com/t/gray-box-in-beginning-of-ion-content/55281 */
 }

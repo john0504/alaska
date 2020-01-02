@@ -68,6 +68,8 @@
       </div>
     </div>
     <br>
+    <div class="control-item-block" *ngIf="isCreationMode()">
+    </div>
     <div class="control-item" *ngIf="!isCreationMode()">
       <span class="control-item-button-text" (click)="deleteScheduleConfirm()">
         {{ 'SCHEDULE_EDIT.DELETE_SCHEDULE' | translate }}

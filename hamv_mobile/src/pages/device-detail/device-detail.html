@@ -19,7 +19,7 @@
     <div *ngFor="let m of deviceCore.secondaryControllers; let i = index;">
       <ui-component (exoChange)="deviceCore.send($event)" [(ngModel)]="deviceCore.status"
         [disabled]="!deviceCore.isAvailable" [model]="m" color="primary" *ngIf="isVisable(m)"></ui-component>
-      <div *ngIf="i < deviceCore.secondaryControllers.length - 1 && isVisable(m)" class="control-item-divider"></div>
+      <div *ngIf="isVisable(m)" class="control-item-divider"></div>
     </div>
   </div>
 </ion-content>

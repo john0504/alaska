@@ -90,9 +90,34 @@ page-schedule-edit {
           }
         }
       }
-    }    
+    }
+    .control-item-block {
+      background-color: $background-transparent;
+      padding-left: 15px;
+      padding-top: 10px;
+      padding-right: 15px;
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      ion-item {
+        min-height: 30px;
+        height: 30px;
+        .item-inner {
+          min-height: 30px;
+          border-bottom: 0;
+          input {
+            text-align: right;     
+          }               
+          ::-webkit-input-placeholder {
+            text-align: right;
+          }
+        }
+      }
+    }     
     .repeat-time-toggle {
-      height: 4rem;
+      height: 5rem;
       @extend .flex-basic;
       justify-content: space-between;
       .title-text {
@@ -110,7 +135,7 @@ page-schedule-edit {
         }
       }
       .big-toggle {
-        padding: 12px 1px;
+        padding: 12px 1px 24px 0;
   
         button {
           padding: 0 6px;
@@ -142,7 +167,7 @@ page-schedule-edit {
       flex-direction: row;
       justify-content: space-between;
       margin-top: 10px;
-      height: 4rem;
+      height: 5rem;
     }    
     .control-button {
       background-color: $background-transparent;
@@ -212,11 +237,7 @@ page-schedule-edit {
       padding: 10px;
     }
     .schedule-main-content {
-      align-content: stretch;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: flex-start;
+      height: 9rem;
       padding: 15px;
       background-color: color($colors, white);
       border-bottom: 1px solid color($colors, grey);
